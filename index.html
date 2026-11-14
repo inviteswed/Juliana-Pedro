@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Juliana &amp; Pedro · Wedding Invitation · 15 December 2027</title>
+  <meta name="description" content="You're invited to celebrate the wedding of Juliana &amp; Pedro on 15 December 2027.">
+  <meta name="theme-color" content="#123D32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juliana &amp; Pedro · Wedding Invitation">
+  <meta property="og:description" content="You're invited to celebrate the wedding of Juliana &amp; Pedro on 15 December 2027. We would love to have you with us!">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <noscript><style>#loader{display:none!important}body{overflow:auto!important}</style></noscript>
+</head>
+
+<body class="is-locked">
+
+  <!-- ============================================================ LOADER -->
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader-inner">
+      <div class="loader-mono">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="ring-bg" cx="100" cy="100" r="92"/>
+          <circle class="ring" cx="100" cy="100" r="92" pathLength="1"/>
+          <circle class="ring ring-2" cx="100" cy="100" r="82" pathLength="1"/>
+        </svg>
+        <span class="loader-letters" data-bind="couple.monogram">J &amp; P</span>
+      </div>
+      <p class="loader-text">Preparing our invitation</p>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ NAVIGATION -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#home" data-nav-link aria-label="Back to the top"><span data-bind="couple.monogram">J &amp; P</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home" data-nav="home" data-nav-link>Home</a>
+      <a href="#invitation" data-nav="invitation" data-nav-link>Invitation</a>
+      <a href="#bride" data-nav="bride" data-nav-link>Bride</a>
+      <a href="#groom" data-nav="groom" data-nav-link>Groom</a>
+      <a href="#story" data-nav="story" data-nav-link>Our Story</a>
+      <a href="#gallery" data-nav="gallery" data-nav-link>Gallery</a>
+      <a href="#save-the-date" data-nav="save-the-date" data-nav-link>Save the Date</a>
+      <a href="#location" data-nav="location" data-nav-link>Location</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <img class="mm-flora" src="assets/flowers/corner.svg" alt="">
+    <nav aria-label="Mobile">
+      <a href="#home" data-nav="home" data-nav-link>Home</a>
+      <a href="#invitation" data-nav="invitation" data-nav-link>Invitation</a>
+      <a href="#bride" data-nav="bride" data-nav-link>Bride</a>
+      <a href="#groom" data-nav="groom" data-nav-link>Groom</a>
+      <a href="#story" data-nav="story" data-nav-link>Our Story</a>
+      <a href="#gallery" data-nav="gallery" data-nav-link>Gallery</a>
+      <a href="#save-the-date" data-nav="save-the-date" data-nav-link>Save the Date</a>
+      <a href="#location" data-nav="location" data-nav-link>Location</a>
+    </nav>
+    <p class="mm-foot"><span data-bind="couple.both">Juliana &amp; Pedro</span> · <span data-bind="@date.short">15.12.2027</span></p>
+  </div>
+
+  <!-- ============================================================ INVITATION ENVELOPE (opening animation) -->
+  <div class="envelope-stage" id="envelope" aria-hidden="true">
+    <div class="env-glow"></div>
+    <div class="env">
+      <div class="env-back"></div>
+      <div class="env-card">
+        <span class="env-card-small">You are invited</span>
+        <span class="env-card-names" data-bind="couple.both">Juliana &amp; Pedro</span>
+        <span class="env-card-date" data-bind="@date.long">15 December 2027</span>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-flap">
+        <div class="flap-face flap-out"></div>
+        <div class="flap-face flap-in"></div>
+      </div>
+      <div class="env-seal"><span data-bind="couple.initials">J&amp;P</span></div>
+    </div>
+  </div>
+
+  <main id="site">
+
+    <!-- ========================================================== 1 · HERO -->
+    <section id="home" class="hero" data-section="home">
+      <div class="hero-bg" data-bg="images.hero"></div>
+      <div class="hero-overlay"></div>
+      <div class="rays" aria-hidden="true"><i></i><i></i><i></i></div>
+      <canvas class="fx-canvas" data-fx="petals" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+
+      <img class="deco deco-tl" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="deco deco-tr" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="deco deco-bl" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="deco deco-br" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="butterfly fly" data-fly src="assets/flowers/butterfly-1.svg" alt="" aria-hidden="true">
+      <img class="butterfly fly" data-fly src="assets/flowers/butterfly-2.svg" alt="" aria-hidden="true">
+
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow">Together with their families</p>
+        <p class="hero-tag">&ldquo;Two hearts, one beautiful journey.&rdquo;</p>
+
+        <h1 class="hero-names" aria-label="Juliana and Pedro">
+          <span class="hand" data-bind="couple.bride">Juliana</span>
+          <span class="amp" aria-hidden="true">&amp;</span>
+          <span class="hand" data-bind="couple.groom">Pedro</span>
+        </h1>
+
+        <div class="hero-date">
+          <span class="eyebrow">Save the date</span>
+          <span class="hero-date-main" data-bind="@date.long">15 December 2027</span>
+        </div>
+
+        <button class="btn btn-gold magnetic" id="openInvitation" type="button">
+          <span>Explore our invitation</span>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================== 2 · BIBLE VERSE & INVITATION -->
+    <section id="invitation" class="invitation" data-section="invitation">
+      <div class="arch-wrap">
+        <img class="arch-img" src="assets/flowers/arch.svg" alt="" aria-hidden="true">
+        <img class="bird bird-l" src="assets/flowers/bird.svg" alt="" aria-hidden="true">
+        <img class="bird bird-r" src="assets/flowers/bird.svg" alt="" aria-hidden="true">
+        <img class="butterfly fly" data-fly src="assets/flowers/butterfly-1.svg" alt="" aria-hidden="true">
+        <img class="butterfly fly" data-fly src="assets/flowers/butterfly-2.svg" alt="" aria-hidden="true">
+
+        <div class="arch-content">
+          <h2 class="invite-quote" data-split>Two souls, one heart, one beautiful beginning.</h2>
+
+          <figure class="verse" data-reveal="up">
+            <blockquote class="verse-text" data-bind="verse.text">[Add Bible Verse Here]</blockquote>
+            <figcaption class="verse-ref" data-bind="verse.reference">[Add Reference]</figcaption>
+          </figure>
+
+          <img class="divider" src="assets/flowers/divider.svg" alt="" aria-hidden="true" data-reveal="fade">
+
+          <p class="invite-line" data-reveal="up">Together with their families,</p>
+          <p class="invite-body" data-reveal="up">We joyfully request the honour of your presence as we celebrate the beginning of our forever.</p>
+          <p class="invite-names hand" data-bind="couple.both">Juliana &amp; Pedro</p>
+          <p class="invite-note" data-reveal="up">Your presence will make our celebration even more special.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== 3 · COUPLE INTRODUCTION -->
+    <section id="couple" class="couple" data-section="invitation">
+      <img class="butterfly fly" data-fly src="assets/flowers/butterfly-2.svg" alt="" aria-hidden="true">
+      <div class="couple-grid">
+        <svg class="link-svg link-h" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+          <path class="link-path" pathLength="1" d="M0,60 C120,10 220,110 340,60 S520,10 640,60 S860,110 1000,60"/>
+        </svg>
+        <svg class="link-svg link-v" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true">
+          <path class="link-path" pathLength="1" d="M60,0 C10,120 110,220 60,340 S10,520 60,640 S110,860 60,1000"/>
+        </svg>
+
+        <figure class="portrait portrait-bride">
+          <div class="portrait-frame"><img data-img="images.bride" alt="Portrait of the bride" decoding="async"></div>
+          <figcaption>
+            <span class="role">The Bride</span>
+            <span class="script-name hand" data-bind="couple.bride">Juliana</span>
+          </figcaption>
+        </figure>
+
+        <div class="couple-amp" aria-hidden="true"><span>&amp;</span></div>
+
+        <figure class="portrait portrait-groom">
+          <div class="portrait-frame"><img data-img="images.groom" alt="Portrait of the groom" decoding="async"></div>
+          <figcaption>
+            <span class="role">The Groom</span>
+            <span class="script-name hand" data-bind="couple.groom">Pedro</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================================================== 4 · BRIDE PROFILE -->
+    <section id="bride" class="profile profile-bride" data-section="bride">
+      <img class="profile-flora flora-a" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="profile-flora flora-b" src="assets/flowers/branch.svg" alt="" aria-hidden="true">
+      <span class="watermark" aria-hidden="true" data-bind="bride.initial">J</span>
+
+      <div class="profile-grid">
+        <div class="profile-photo">
+          <div class="photo-shape"><img data-img="images.bride" alt="Portrait of Juliana, the bride" decoding="async"></div>
+          <span class="vertical-label" aria-hidden="true">The Bride</span>
+          <img class="photo-flower" src="assets/flowers/flower-1.svg" alt="" aria-hidden="true">
+        </div>
+
+        <div class="profile-info">
+          <p class="eyebrow">Meet the bride</p>
+          <h2 class="profile-name hand" data-bind="bride.name">Juliana</h2>
+          <p class="profile-role">The Bride</p>
+          <blockquote class="profile-intro" data-bind="bride.intro">Grace, kindness and a beautiful heart. The beginning of a new chapter filled with love and happiness.</blockquote>
+
+          <dl class="facts" data-facts="bride"></dl>
+
+          <div class="profile-extra" data-extra="bride">
+            <a class="insta" data-extra-instagram hidden target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+              <span>Instagram</span>
+            </a>
+            <p class="extra-line" data-extra-interests hidden><b>Interests</b><span></span></p>
+            <p class="extra-quote" data-extra-quote hidden></p>
+            <p class="extra-line" data-extra-message hidden><b>A little note</b><span></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== 5 · GROOM PROFILE -->
+    <section id="groom" class="profile profile-groom" data-section="groom">
+      <img class="profile-flora flora-a" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="profile-flora flora-b" src="assets/flowers/branch.svg" alt="" aria-hidden="true">
+      <span class="watermark" aria-hidden="true" data-bind="groom.initial">P</span>
+
+      <div class="profile-grid">
+        <div class="profile-photo">
+          <div class="photo-shape"><img data-img="images.groom" alt="Portrait of Pedro, the groom" decoding="async"></div>
+          <span class="vertical-label" aria-hidden="true">The Groom</span>
+          <div class="medallion" aria-hidden="true"><img src="assets/flowers/laurel.svg" alt=""><span data-bind="groom.initial">P</span></div>
+        </div>
+
+        <div class="profile-info">
+          <p class="eyebrow">Meet the groom</p>
+          <h2 class="profile-name hand" data-bind="groom.name">Pedro</h2>
+          <p class="profile-role">The Groom</p>
+          <blockquote class="profile-intro" data-bind="groom.intro">With dreams in his heart and love in his journey, he is ready to begin forever.</blockquote>
+
+          <dl class="facts" data-facts="groom"></dl>
+
+          <div class="profile-extra" data-extra="groom">
+            <a class="insta" data-extra-instagram hidden target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+              <span>Instagram</span>
+            </a>
+            <p class="extra-line" data-extra-interests hidden><b>Interests</b><span></span></p>
+            <p class="extra-quote" data-extra-quote hidden></p>
+            <p class="extra-line" data-extra-message hidden><b>A little note</b><span></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== 6 · OUR LOVE STORY -->
+    <section id="story" class="story" data-section="story">
+      <img class="story-flora sf-1" src="assets/flowers/branch.svg" alt="" aria-hidden="true">
+      <img class="story-flora sf-2" src="assets/flowers/branch.svg" alt="" aria-hidden="true">
+
+      <header class="section-head">
+        <p class="eyebrow">Chapter by chapter</p>
+        <h2 class="section-title" data-split>Our Love Story</h2>
+        <img class="divider" src="assets/flowers/divider.svg" alt="" aria-hidden="true">
+      </header>
+
+      <div class="timeline" id="timeline">
+        <div class="tl-line" aria-hidden="true"><span class="tl-progress"></span></div>
+
+        <article class="tl-item" data-side="left">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-text">
+            <span class="tl-num" aria-hidden="true">01</span>
+            <p class="tl-date" data-bind="story.0.date">[Add Date]</p>
+            <h3 data-bind="story.0.title">How We Met</h3>
+            <p data-bind="story.0.text">A beautiful beginning to an unexpected journey.</p>
+          </div>
+          <figure class="tl-card"><img data-img="story.0.image" alt="How we met" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="tl-item" data-side="right">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-text">
+            <span class="tl-num" aria-hidden="true">02</span>
+            <p class="tl-date" data-bind="story.1.date">[Add Date]</p>
+            <h3 data-bind="story.1.title">The Beginning of Forever</h3>
+            <p data-bind="story.1.text">Two hearts discovering a lifetime of possibilities.</p>
+          </div>
+          <figure class="tl-card"><img data-img="story.1.image" alt="The beginning of forever" loading="lazy" decoding="async"></figure>
+        </article>
+
+        <article class="tl-item" data-side="left">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-text">
+            <span class="tl-num" aria-hidden="true">03</span>
+            <p class="tl-date" data-bind="story.2.date">15 December 2027</p>
+            <h3 data-bind="story.2.title">Our Wedding Day</h3>
+            <p data-bind="story.2.text">The beginning of our forever.</p>
+          </div>
+          <figure class="tl-card"><img data-img="story.2.image" alt="Our wedding day" loading="lazy" decoding="async"></figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================== 7 · GALLERY -->
+    <section id="gallery" class="gallery" data-section="gallery">
+      <header class="section-head">
+        <p class="eyebrow">The gallery</p>
+        <h2 class="section-title" data-split>Moments That Last Forever</h2>
+      </header>
+      <div class="collage" id="collage" aria-label="Wedding photo gallery"></div>
+    </section>
+
+    <!-- ========================================================== 8 · SAVE THE DATE -->
+    <section id="save-the-date" class="std" data-section="save-the-date">
+      <canvas class="fx-canvas" data-fx="sparkles" aria-hidden="true"></canvas>
+      <img class="std-flora std-flora-l" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="std-flora std-flora-r" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+
+      <div class="std-frame">
+        <svg class="frame-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <rect class="frame-line" x="0.7" y="0.7" width="98" height="98"/>
+        </svg>
+
+        <div class="std-top">
+          <div class="std-type">
+            <p class="eyebrow">Save the date</p>
+            <div class="std-big" aria-hidden="true" data-bind="@date.day">15</div>
+            <p class="std-month" data-bind="@date.monthUpper">December</p>
+            <p class="std-year" data-bind="@date.year">2027</p>
+            <p class="std-weekday" data-bind="@date.weekday">Wednesday</p>
+            <span class="sr-only">Wedding date: <span data-bind="@date.long">15 December 2027</span></span>
+          </div>
+
+          <div class="cal-page" aria-hidden="true">
+            <div class="cal-rings"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="cal-head"><span data-bind="@date.monthUpper">December</span><span data-bind="@date.year">2027</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <svg class="cal-ring-mark" viewBox="0 0 60 60"><ellipse class="cal-ellipse" cx="30" cy="30" rx="25" ry="22" pathLength="1"/></svg>
+          </div>
+        </div>
+
+        <div class="countdown" id="countdown" role="timer" aria-label="Time remaining until the wedding">
+          <div class="cd-unit" data-unit="days"><div class="cd-num"><span>000</span></div><span class="cd-label">Days</span></div>
+          <div class="cd-unit" data-unit="hours"><div class="cd-num"><span>00</span></div><span class="cd-label">Hours</span></div>
+          <div class="cd-unit" data-unit="minutes"><div class="cd-num"><span>00</span></div><span class="cd-label">Minutes</span></div>
+          <div class="cd-unit" data-unit="seconds"><div class="cd-num"><span>00</span></div><span class="cd-label">Seconds</span></div>
+        </div>
+        <p class="cd-done" id="cdDone" hidden></p>
+
+        <div class="cal-action">
+          <button class="btn btn-gold magnetic" id="addToCal" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="calMenu">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 14v4M10 16h4"/></svg>
+            <span>Add to calendar</span>
+          </button>
+          <div class="cal-menu" id="calMenu" role="menu" hidden>
+            <button type="button" role="menuitem" id="calIcs">Apple · Outlook · other (.ics)</button>
+            <a role="menuitem" id="calGoogle" href="#" target="_blank" rel="noopener">Google Calendar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== 9 · WEDDING DAY DETAILS -->
+    <section id="details" class="details" data-section="save-the-date">
+      <header class="section-head">
+        <p class="eyebrow">The wedding day</p>
+        <h2 class="section-title" data-split>Wedding Day Details</h2>
+        <img class="divider" src="assets/flowers/divider.svg" alt="" aria-hidden="true">
+      </header>
+
+      <div class="detail-cards">
+        <article class="detail-card">
+          <img class="dc-flora" src="assets/flowers/flower-1.svg" alt="" aria-hidden="true">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <h3>Date</h3>
+          <p data-bind="@date.long">15 December 2027</p>
+        </article>
+        <article class="detail-card">
+          <img class="dc-flora" src="assets/flowers/flower-2.svg" alt="" aria-hidden="true">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <h3>Day</h3>
+          <p data-bind="@date.weekday">Wednesday</p>
+        </article>
+        <article class="detail-card">
+          <img class="dc-flora" src="assets/flowers/flower-3.svg" alt="" aria-hidden="true">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <h3>Time</h3>
+          <p data-bind="@date.time">11 am</p>
+        </article>
+        <article class="detail-card">
+          <img class="dc-flora" src="assets/flowers/flower-4.svg" alt="" aria-hidden="true">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 9h4M12 7v5M14 22v-4a2 2 0 0 0-4 0v4"/><path d="m18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22"/><path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7"/></svg>
+          <h3>Venue</h3>
+          <p><span data-bind="venue.name">St James Church</span><br><span class="dc-sub" data-bind="venue.place">Karikkattoor</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================== 10 · VENUE & LOCATION -->
+    <section id="location" class="venue" data-section="location">
+      <div class="venue-bg" data-bg="images.venue"></div>
+      <div class="venue-overlay"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div class="venue-frame">
+        <svg class="frame-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <rect class="frame-line" x="0.7" y="0.7" width="98" height="98"/>
+        </svg>
+        <span class="vf-corner c1" aria-hidden="true"></span><span class="vf-corner c2" aria-hidden="true"></span>
+        <span class="vf-corner c3" aria-hidden="true"></span><span class="vf-corner c4" aria-hidden="true"></span>
+
+        <div class="pin" aria-hidden="true">
+          <span class="pin-pulse"></span><span class="pin-pulse p2"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+
+        <p class="eyebrow">Celebration venue</p>
+        <h2 class="venue-name">
+          <span class="vn-1" data-bind="venue.name">St James Church</span>
+          <span class="vn-2" data-bind="venue.place">Karikkattoor</span>
+        </h2>
+        <p class="venue-address" data-bind="venue.address">[Full Wedding Address]</p>
+
+        <a class="btn btn-gold magnetic" id="viewLocation" href="https://share.google/KC3axPXe4xh5JiDZx" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>View location</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================== 11 · CLOSING -->
+    <section id="closing" class="closing">
+      <canvas class="fx-canvas" data-fx="sparkles-light" aria-hidden="true"></canvas>
+      <img class="closing-flora cf-tl" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="closing-flora cf-tr" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="closing-flora cf-bl" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="closing-flora cf-br" src="assets/flowers/corner.svg" alt="" aria-hidden="true">
+      <img class="butterfly fly" data-fly src="assets/flowers/butterfly-1.svg" alt="" aria-hidden="true">
+      <img class="butterfly fly" data-fly src="assets/flowers/butterfly-2.svg" alt="" aria-hidden="true">
+
+      <div class="closing-inner">
+        <p class="closing-lead" data-split>And so, our forever begins&hellip;</p>
+        <h2 class="closing-names hand" data-bind="couple.both">Juliana &amp; Pedro</h2>
+        <p class="closing-date" data-bind="@date.short">15.12.2027</p>
+        <img class="divider" src="assets/flowers/divider.svg" alt="" aria-hidden="true">
+        <p class="closing-thanks">&ldquo;Thank you for being part of our beautiful journey.&rdquo;</p>
+
+        <svg class="heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+
+        <div class="share-row">
+          <button class="btn btn-emerald magnetic" id="shareBtn" type="button">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+            <span>Share invitation</span>
+          </button>
+          <a class="btn btn-ghost-dark" id="whatsappBtn" href="#" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+            <span>WhatsApp</span>
+          </a>
+          <button class="btn btn-ghost-dark" id="copyBtn" type="button">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <span>Copy link</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button class="to-top magnetic" id="toTop" type="button" aria-label="Back to top">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7M12 19V5"/></svg>
+    </button>
+    <p class="footer-names" data-bind="couple.both">Juliana &amp; Pedro</p>
+    <p class="footer-meta"><span data-bind="@date.long">15 December 2027</span> · <span data-bind="venue.name">St James Church</span>, <span data-bind="venue.place">Karikkattoor</span></p>
+    <p class="footer-small">Made with love</p>
+  </footer>
+
+  <!-- ============================================================ LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <div class="lb-backdrop"></div>
+    <button class="lb-btn lb-close" type="button" aria-label="Close viewer">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next photo">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="lb-stage"><img class="lb-img" alt="" draggable="false"></div>
+    <p class="lb-count"><span id="lbIndex">1</span> / <span id="lbTotal">1</span></p>
+  </div>
+
+  <!-- ============================================================ MUSIC -->
+  <div class="music" id="music" aria-label="Background music controls">
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Play background music" aria-pressed="false">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </button>
+    <button class="music-mute" id="musicMute" type="button" aria-label="Mute music" aria-pressed="false">
+      <svg class="ico ico-vol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+      <svg class="ico ico-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+    </button>
+  </div>
+  <audio id="bgm" loop preload="none"></audio>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============================================================ SCRIPTS (plain scripts: works from file://) -->
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
